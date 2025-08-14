@@ -14,7 +14,7 @@ main()
     console.log("error connecting to db.", err);
 })
 
-app.listen(8080, (req,res)=>{
+app.listen(8080, ()=>{
     console.log("app is listening...");
 });
 
