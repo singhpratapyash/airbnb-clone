@@ -35,10 +35,21 @@ app.get("/listings", async (req,res)=>{
     res.render("./listings/index.ejs", { allListings } );
 });
 
+app.get("/listings/new", (req,res)=>{
+    res.render("new.ejs");
+});
+
 app.get("/listings/:id", async (req,res)=>{
 
     let {id} = req.params;
     const showListing = await Listing.findById(id);
     res.render("./listings/show.ejs", {showListing});
 
-})
+});
+
+app.post("/listings", (req, res)=>{
+
+    const data = req.body.listing;
+    console.log(data);
+
+});

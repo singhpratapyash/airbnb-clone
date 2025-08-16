@@ -6,7 +6,11 @@
     <title>Listings</title>
 </head>
 <body>
-    <h3>All Listings : </h3>
+    <h2>All Listings : </h2>
+
+    <form method="GET" action="/listings/new">
+        <button>Create new listing</button>
+    </form>
 
     <% for(let listing of allListings){%>
         <ul>
