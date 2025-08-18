@@ -1,20 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Showing specific listing requested</title>
-</head>
+<% layout('/layouts/boilerplate.ejs') %>
 <body>
-    <h3>Specific Listing: <%= showListing.id %></h3>
+    <h3>Specific Listing: <%= showListing._id %></h3>
     <ul>
         <li><%=showListing.title%></li>
         <li><%=showListing.description%></li>
         <li><%=showListing.image.url%></li>
-        <li><%=showListing.price%></li>
+        <li>&#8377; <%=showListing.price%></li>
         <li><%=showListing.location%></li>
         <li><%=showListing.country%></li>
     </ul>
+    <form method="GET" action="/listings/<%=showListing._id%>/edit">
+        <button>Edit this listing</button>
+    </form>
+
+    <form method="POST" action="/listings/<%=showListing._id%>?_method=DELETE">
+        <button>delete this listing</button>
+    </form>
 
 </body>
-</html>
