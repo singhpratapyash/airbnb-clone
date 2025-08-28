@@ -1,6 +1,17 @@
 <% layout('/layouts/boilerplate.ejs') %>
 <body>
     <h3>Specific Listing: <%= showListing._id %></h3>
+
+    <div class="card">
+        <img src="<%=showListing.image.url%>" class="card-img-top show-img" alt="listing_image">
+        <div class="card-body" >
+            <p class="card-text"><%=showListing.title%></p>
+        </div>
+    </div>
+
+
+
+
     <ul>
         <li><%=showListing.title%></li>
         <li><%=showListing.description%></li>
@@ -9,12 +20,19 @@
         <li><%=showListing.location%></li>
         <li><%=showListing.country%></li>
     </ul>
-    <form method="GET" action="/listings/<%=showListing._id%>/edit">
-        <button>Edit this listing</button>
-    </form>
+    <br>
 
-    <form method="POST" action="/listings/<%=showListing._id%>?_method=DELETE">
+    <div class="row">
+    <div class="col md-4">
+        <form method="GET" action="/listings/<%=showListing._id%>/edit">
+        <button>Edit this listing</button>
+        </form>
+    </div>
+    <div class="col md-8">
+        <form method="POST" action="/listings/<%=showListing._id%>?_method=DELETE">
         <button>delete this listing</button>
-    </form>
+        </form>
+    </div>
+    </div>
 
 </body>
