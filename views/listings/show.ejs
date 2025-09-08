@@ -1,38 +1,44 @@
 <% layout('/layouts/boilerplate.ejs') %>
 <body>
-    <h3>Specific Listing: <%= showListing._id %></h3>
+<div class="row">
+    <div class="col-6 offset-2 mt-3">
+        <h3>Listing Detail</h3> <br><br>
 
-    <div class="card">
-        <img src="<%=showListing.image.url%>" class="card-img-top show-img" alt="listing_image">
-        <div class="card-body" >
-            <p class="card-text"><%=showListing.title%></p>
+        <div class="card">
+
+            <img src="<%=showListing.image.url%>" class="card-img-top show-img" alt="listing_image">
+
+            <div class="card-body" >
+                <p class="card-text">
+                    <br>
+                    <b><%=showListing.title%></b>  <br> <br>
+                    <%=showListing.description%> <br><br>
+                    
+                    &#128205;<%=showListing.location%>, 
+                    <%=showListing.country%> <br> <br> 
+                    &#8377; <%=showListing.price.toLocaleString("en-IN")%> /night <br>
+                </p>
+            </div>
+
         </div>
     </div>
 
+</div>
 
+<br><br>
 
-
-    <ul>
-        <li><%=showListing.title%></li>
-        <li><%=showListing.description%></li>
-        <li><%=showListing.image.url%></li>
-        <li>&#8377; <%=showListing.price%></li>
-        <li><%=showListing.location%></li>
-        <li><%=showListing.country%></li>
-    </ul>
-    <br>
-
-    <div class="row">
-    <div class="col md-4">
+<div class="row">
+    <div class="col offset-2  ">
         <form method="GET" action="/listings/<%=showListing._id%>/edit">
-        <button>Edit this listing</button>
+        <button class="btn btn-light" style="color:green">Edit this listing</button>
         </form>
     </div>
-    <div class="col md-8">
+    <div class="col">
         <form method="POST" action="/listings/<%=showListing._id%>?_method=DELETE">
-        <button>delete this listing</button>
+        <button class="btn btn-light " style="color:red">Delete this listing</button>
         </form>
     </div>
-    </div>
+</div>
+<br><br>
 
 </body>
