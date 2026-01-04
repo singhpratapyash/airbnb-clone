@@ -5,7 +5,7 @@
     
     <div class="col-8 offset-2">
     <h3>Create new listing</h3> <br>
-
+       
     <form method="POST" action="/listings" novalidate class="needs-validation">
 
         <div class="mb-3">
@@ -20,8 +20,7 @@
 
         <div class="mb-3">
             <label for="desc" class="form-label">Description</label>
-            <textarea rows="4" name= "listing[description]" placeholder="Enter description" class="form-control" id="desc" required>
-            </textarea> 
+            <textarea rows="4" name= "listing[description]" placeholder="Enter description" class="form-control" id="desc" required></textarea> 
 
             <div class="valid-feedback">Valid</div>
             <div class="invalid-feedback">Invalid</div>
@@ -39,7 +38,7 @@
 
         <div class="mb-3 col-md-4">
             <label for="price" class="form-label">Price</label>
-            <input type="number" name="listing[price]" placeholder="" class="form-control" id="price"
+            <input name="listing[price]" placeholder="" class="form-control" id="price" type="text"
             required>
 
             <div class="valid-feedback">Valid</div>
